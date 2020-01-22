@@ -4,8 +4,7 @@ import Button from '../components/Button/Button';
 import RevUnitLogo from '../public/logos/revunit.svg';
 import DrawbridgeLogo from '../public/logos/drawbridge.svg';
 import RichContextLogo from '../public/logos/rich-context.svg';
-import * as styles from './pages.styles';
-import { Fragment } from 'react';
+import * as styles from '../styles/pages.styles';
 
 const SponsorLogo = ({ component, url, customStyles }) => {
   return (

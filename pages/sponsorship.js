@@ -3,7 +3,7 @@ import Button from '../components/Button/Button';
 import RevUnitLogo from '../public/logos/revunit.svg';
 import RichContextLogo from '../public/logos/rich-context.svg';
 import ListItem from '../components/ListItem/ListItem';
-import * as styles from './pages.styles';
+import * as styles from '../styles/pages.styles';
 
 const Sponsorship = () => {
   return (

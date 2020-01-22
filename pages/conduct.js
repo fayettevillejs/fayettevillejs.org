@@ -2,7 +2,7 @@ import Layout from '../components/Layout/Layout';
 import { Fragment } from 'react';
 import ListItem from '../components/ListItem/ListItem';
 import Heart from '../public/heart.svg';
-import * as styles from './pages.styles';
+import * as styles from '../styles/pages.styles';
 
 const CodeOfConduct = () => (
   <Fragment>
