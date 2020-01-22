@@ -74,7 +74,10 @@ export const menuContainer = showMenu => ({
   height: '100vh',
   zIndex: 99,
   backgroundColor: 'none',
-  overflow: 'hidden'
+  overflow: 'hidden',
+  '@media (max-width: 967px)': {
+    width: '100vw'
+  }
 });
 
 export const defaultFill = showMenu => ({
@@ -119,7 +122,10 @@ export const menuOptions = {
   height: '100vh',
   flexDirection: 'column',
   position: 'absolute',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  '@media (max-width: 468px)': {
+    left: 32
+  }
 };
 
 export const menuOption = {
@@ -128,7 +134,10 @@ export const menuOption = {
   fontWeight: 900,
   marginTop: '1rem',
   cursor: 'pointer',
-  textDecoration: 'none'
+  textDecoration: 'none',
+  '@media (max-width: 468px)': {
+    fontSize: '2.5rem'
+  }
 };
 
 export const selectedOption = {

@@ -8,7 +8,7 @@ const About = () => (
   <Fragment>
     <Layout customStyles={styles.customLayoutPadding}>
       <div css={styles.textContentContainer}>
-        <h3 css={[styles.h3, { marginTop: 120 }]}>What is Fayetteville.js?</h3>
+        <h3 css={styles.h3}>What is Fayetteville.js?</h3>
         <p css={styles.bottomSpacing(24)}>
           Fayetteville.js is a monthly meeting of software engineers in Northwest Arkansas who are
           interested in JavaScript. The purpose of the group is to learn, teach and network with

@@ -8,7 +8,7 @@ const CodeOfConduct = () => (
   <Fragment>
     <Layout customStyles={styles.customLayoutPadding}>
       <div css={styles.textContentContainer}>
-        <p css={[styles.bottomSpacing(24), { marginTop: 120 }]}>
+        <p css={styles.bottomSpacing(24)}>
           All delegates, speakers, sponsors and volunteers at any fayetteville.js event are required
           to agree with the following code of conduct. Organizers will enforce this code throughout
           the event.

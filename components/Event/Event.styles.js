@@ -1,6 +1,21 @@
-export const eventTitle = { fontWeight: 900, fontSize: '3.5rem', lineHeight: '3.4rem' };
+export const eventTitle = {
+  fontWeight: 900,
+  fontSize: '3.5rem',
+  lineHeight: '3.4rem',
+  '@media (max-width: 468px)': {
+    fontSize: '2.8rem',
+    lineHeight: '2.7rem'
+  }
+};
 
-export const speaker = { marginTop: 24, fontSize: '1.5rem', marginBottom: 32 };
+export const speaker = {
+  marginTop: 24,
+  fontSize: '1.5rem',
+  marginBottom: 32,
+  '@media (max-width: 468px)': {
+    fontSize: '1.25rem'
+  }
+};
 
 export const description = {
   marginTop: 16,

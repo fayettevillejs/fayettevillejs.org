@@ -9,7 +9,7 @@ const Sponsorship = () => {
   return (
     <Layout customStyles={styles.customLayoutPadding}>
       <div css={styles.textContentContainer}>
-        <h3 css={[styles.h3, { marginTop: 120 }]}>What is the money used for?</h3>
+        <h3 css={styles.h3}>What is the money used for?</h3>
         <p css={styles.bottomSpacing(24)}>
           The cost of running the group is about $1600 / year, and nearly all money goes toward food
           and beverages for the attendees. In the event we're having a social event, we will pay for

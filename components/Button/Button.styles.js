@@ -1,6 +1,6 @@
 export const button = {
   padding: '16px 44px',
-  backgroundColor: 'transparent',
+  backgroundColor: '#4C4C4C',
   border: '3px solid #25F7B2',
   borderRadius: 8,
   cursor: 'pointer',

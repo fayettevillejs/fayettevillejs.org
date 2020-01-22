@@ -4,7 +4,7 @@ import { Fragment, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import Event from '../components/Event/Event';
 import Bomb from '../public/bomb.svg';
-import * as styles from './index.styles';
+import * as styles from './pages.styles';
 
 const REMOVE_HTML = /<[^>]*>?/gm;
 
