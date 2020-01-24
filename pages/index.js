@@ -30,7 +30,9 @@ const Content = ({ event, error }) => {
 
 const Index = ({ event, error }) => {
   useEffect(() => {
-    if (!sessionStorage.getItem('fayjs_event')) {
+    const sessionData = sessionStorage.getItem('fayjs_event');
+
+    if (!sessionData || sessionData === 'null') {
       sessionStorage.setItem('fayjs_event', JSON.stringify(event));
     }
   }, []);
@@ -52,19 +54,11 @@ const Index = ({ event, error }) => {
 
 Index.getInitialProps = async () => {
   if (process.browser) {
-    return {
-      event: JSON.parse(sessionStorage.getItem('fayjs_event'))
-    };
+    const sessionData = await JSON.parse(sessionStorage.getItem('fayjs_event'));
+    return { event: sessionData } || fetchMeetupInfo();
   }
 
-  const response = await fetch('https://api.meetup.com/fayettevillejs/events');
-  const result = await response.json();
-
-  if (!result || result.errors) {
-    throw new Error(result.errors[0].message);
-  }
-
-  return { event: formatEvent(result) };
+  return fetchMeetupInfo();
 };
 
 function formatEvent(eventPayload) {
@@ -88,6 +82,17 @@ function findSpeakerName(description) {
     .split(' ');
 
   return `${splitSubstring[1]} ${splitSubstring[2]}`;
+}
+
+async function fetchMeetupInfo() {
+  const response = await fetch('https://api.meetup.com/fayettevillejs/events');
+  const result = await response.json();
+
+  if (!result || result.errors) {
+    throw new Error(result.errors[0].message);
+  }
+
+  return { event: formatEvent(result) };
 }
 
 export default Index;
