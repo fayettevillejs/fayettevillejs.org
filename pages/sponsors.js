@@ -3,6 +3,7 @@ import Layout from '../components/Layout/Layout';
 import Button from '../components/Button/Button';
 import RevUnitLogo from '../public/logos/revunit.svg';
 import DrawbridgeLogo from '../public/logos/drawbridge.svg';
+import TeslarLogo from '../public/logos/teslar.svg';
 import RichContextLogo from '../public/logos/rich-context.svg';
 import * as styles from '../styles/pages.styles';
 
@@ -31,6 +32,7 @@ const Sponsors = () => {
           url="https://drawbridgepartnersllc.com/"
         />
         <SponsorLogo component={<RichContextLogo />} url="https://www.richcontext.com/" />
+        <SponsorLogo component={<TeslarLogo />} url="https://www.teslarsoftware.com/" />
         <div css={styles.supportButtonLayout}>
           <Button fullWidth text="sponsor" onClick={() => router.push('/sponsorship')} />
         </div>
