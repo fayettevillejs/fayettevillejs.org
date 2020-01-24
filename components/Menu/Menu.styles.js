@@ -5,13 +5,13 @@ const backgroundGrow = keyframes({
     transform: 'scale(1.0)'
   },
   '100%': {
-    transform: 'scale(60.0)'
+    transform: 'scale(80.0)'
   }
 });
 
 const backgroundShrink = keyframes({
   '0%': {
-    transform: 'scale(60.0)'
+    transform: 'scale(80.0)'
   },
   '100%': {
     transform: 'scale(1.0)'
