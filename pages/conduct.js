@@ -59,7 +59,7 @@ const CodeOfConduct = () => (
           We value your attendance. <Heart />
         </p>
 
-        <p css={{ fontSize: 10 }}>
+        <p css={{ fontSize: 10, paddingBottom: 32 }}>
           This Code of Conduct is an adaptation of the{' '}
           <a css={styles.link} href="https://jsconf.com/codeofconduct.html">
             JSConf Code of Conduct.

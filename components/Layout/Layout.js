@@ -18,7 +18,7 @@ const TitleSection = ({ title }) => {
   return <h2 css={styles.h2}>{title}</h2>;
 };
 
-const Layout = ({ children, customStyles }) => {
+const Layout = ({ children, customStyles, bottomButton }) => {
   const router = useRouter();
 
   return (
@@ -40,6 +40,7 @@ const Layout = ({ children, customStyles }) => {
           <Logo />
         </div>
       </div>
+      {bottomButton}
     </Fragment>
   );
 };

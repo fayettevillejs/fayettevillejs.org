@@ -7,6 +7,14 @@ import TeslarLogo from '../public/logos/teslar.svg';
 import RichContextLogo from '../public/logos/rich-context.svg';
 import * as styles from '../styles/pages.styles';
 
+const SponsorButton = ({ onClick }) => {
+  return (
+    <div css={styles.supportButtonLayout}>
+      <Button fullWidth text="sponsor" onClick={onClick} />
+    </div>
+  );
+};
+
 const SponsorLogo = ({ component, url, customStyles }) => {
   return (
     <a href={url} css={{ cursor: 'pointer' }}>
@@ -17,9 +25,13 @@ const SponsorLogo = ({ component, url, customStyles }) => {
 
 const Sponsors = () => {
   const router = useRouter();
+  const handleClick = () => router.push('/sponsorship');
 
   return (
-    <Layout>
+    <Layout
+      customStyles={styles.sponsorBottomMargin}
+      bottomButton={<SponsorButton onClick={handleClick} />}
+    >
       <div css={[styles.textContentContainer, styles.sponsorLayout]}>
         <a href="https://hirelofty.com/" css={{ cursor: 'pointer' }}>
           <img src="/logos/lofty-white.png" css={[styles.logo, styles.loftyLogo]} />
@@ -33,9 +45,6 @@ const Sponsors = () => {
         />
         <SponsorLogo component={<RichContextLogo />} url="https://www.richcontext.com/" />
         <SponsorLogo component={<TeslarLogo />} url="https://www.teslarsoftware.com/" />
-        <div css={styles.supportButtonLayout}>
-          <Button fullWidth text="sponsor" onClick={() => router.push('/sponsorship')} />
-        </div>
       </div>
     </Layout>
   );

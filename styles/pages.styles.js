@@ -54,7 +54,7 @@ export const subListItem = {
 };
 
 export const supportButtonLayout = {
-  position: 'absolute',
+  position: 'fixed',
   bottom: 0,
   left: 0,
   width: '50vw',
@@ -103,4 +103,12 @@ export const loftyLogo = {
   marginTop: 0,
   paddingTop: 0,
   '@media (max-width: 468px)': { height: 140 }
+};
+
+export const sponsorBottomMargin = {
+  marginTop: 85,
+  paddingBottom: 96,
+  '@media (max-width: 468px)': {
+    paddingBottom: 96
+  }
 };
