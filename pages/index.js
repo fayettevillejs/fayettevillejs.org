@@ -80,7 +80,8 @@ function formatEvent(eventPayload) {
 }
 
 function findSpeakerName(description) {
-  const startingIndex = description.indexOf('Presenter' || 'Speaker');
+  const startingIndex = description.search(/(Presenter|Speaker)/);
+
   const splitSubstring = description
     .substring(startingIndex)
     .replace(REMOVE_HTML, '')
