@@ -22,7 +22,7 @@ const Content = ({ event, error }) => {
   }
 
   return (
-    <Layout>
+    <Layout customStyles={styles.customLayoutPadding}>
       <Event event={event} />
     </Layout>
   );
@@ -42,6 +42,11 @@ const Index = ({ event, error }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="fayetteville.js -- A JavaScript Meetup in Northwest Arkansas"
+        />
+        <title>fayetteville.js -- A JavaScript Meetup in Northwest Arkansas</title>
         <link
           href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap"
           rel="stylesheet"
@@ -63,13 +68,21 @@ Index.getInitialProps = async () => {
 
 function formatEvent(eventPayload) {
   const nextEvent = eventPayload[0];
-  const speaker = findSpeakerName(nextEvent.description);
-  const splitDescription = nextEvent.description.split('<p>');
+
+  if (nextEvent.name.toLowerCase().match(/lightning talks/)) {
+    return {
+      ...nextEvent,
+      speaker: null,
+      splitDescription: nextEvent.description.split('=&gt;'),
+      isLightningTalks: true
+    };
+  }
 
   return {
     ...nextEvent,
-    speaker,
-    splitDescription
+    speaker: findSpeakerName(nextEvent.description),
+    splitDescription: nextEvent.description.split('<p>'),
+    isLightningTalks: false
   };
 }
 
