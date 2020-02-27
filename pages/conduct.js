@@ -1,11 +1,12 @@
 import Layout from '../components/Layout/Layout';
+import Header from '../components/Header/Header';
 import { Fragment } from 'react';
-import ListItem from '../components/ListItem/ListItem';
 import Heart from '../public/heart.svg';
 import * as styles from '../styles/pages.styles';
 
 const CodeOfConduct = () => (
   <Fragment>
+    <Header />
     <Layout customStyles={styles.customLayoutPadding}>
       <div css={styles.textContentContainer}>
         <p css={styles.bottomSpacing(24)}>

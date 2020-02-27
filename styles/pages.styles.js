@@ -71,8 +71,9 @@ export const supportButtonLayout = {
 export const sponsorLayout = {
   paddingRight: 0,
   paddingTop: 0,
-  margin: '0 auto',
+  paddingRight: '4rem',
   '@media (max-width: 468px)': {
+    marginTop: 0,
     marginRight: 24,
     marginLeft: 24
   }
@@ -106,7 +107,7 @@ export const loftyLogo = {
 };
 
 export const sponsorBottomMargin = {
-  marginTop: 85,
+  paddingTop: 85,
   paddingBottom: 96,
   '@media (max-width: 468px)': {
     paddingBottom: 96

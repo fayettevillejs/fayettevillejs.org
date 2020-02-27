@@ -1,8 +1,8 @@
-import Head from 'next/head';
 import fetch from 'isomorphic-unfetch';
 import { Fragment, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import Event from '../components/Event/Event';
+import Header from '../components/Header/Header';
 import Bomb from '../public/bomb.svg';
 import * as styles from '../styles/pages.styles';
 
@@ -39,19 +39,7 @@ const Index = ({ event, error }) => {
 
   return (
     <Fragment>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="utf-8" />
-        <meta
-          name="description"
-          content="fayetteville.js -- A JavaScript Meetup in Northwest Arkansas"
-        />
-        <title>fayetteville.js -- A JavaScript Meetup in Northwest Arkansas</title>
-        <link
-          href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Head>
+      <Header />
       <Content event={event} error={error} />
     </Fragment>
   );

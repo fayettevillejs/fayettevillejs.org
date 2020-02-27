@@ -1,4 +1,5 @@
 import Layout from '../components/Layout/Layout';
+import Header from '../components/Header/Header';
 import { Fragment } from 'react';
 import ListItem from '../components/ListItem/ListItem';
 import Heart from '../public/heart.svg';
@@ -6,6 +7,7 @@ import * as styles from '../styles/pages.styles';
 
 const About = () => (
   <Fragment>
+    <Header />
     <Layout customStyles={styles.customLayoutPadding}>
       <div css={styles.textContentContainer}>
         <h3 css={styles.h3}>What is Fayetteville.js?</h3>
