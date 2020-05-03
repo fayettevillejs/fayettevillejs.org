@@ -9,13 +9,24 @@ import * as styles from '../styles/pages.styles';
 const REMOVE_HTML = /<[^>]*>?/gm;
 
 const Content = ({ event, error }) => {
-  if (!event || error) {
+  if (error) {
     return (
       <Layout>
         <div css={styles.errorContainer}>
           <Bomb />
           <p css={styles.errorTitle}>Oh no, you broke it!</p>
           <p css={styles.errorSubTitle}>We'll restart the hamster wheel shortly.</p>
+        </div>
+      </Layout>
+    );
+  }
+
+  if (!event) {
+    return (
+      <Layout>
+        <div css={styles.errorContainer}>
+          <p css={styles.errorTitle}>No Events Scheduled</p>
+          <p css={styles.errorSubTitle}>Please check back soon!</p>
         </div>
       </Layout>
     );
@@ -55,6 +66,10 @@ Index.getInitialProps = async () => {
 };
 
 function formatEvent(eventPayload) {
+  if (eventPayload.length === 0) {
+    return null;
+  }
+
   const nextEvent = eventPayload[0];
 
   if (nextEvent.name.toLowerCase().match(/lightning talks/)) {
@@ -77,10 +92,7 @@ function formatEvent(eventPayload) {
 function findSpeakerName(description) {
   const startingIndex = description.search(/(Presenter|Speaker)/);
 
-  const splitSubstring = description
-    .substring(startingIndex)
-    .replace(REMOVE_HTML, '')
-    .split(' ');
+  const splitSubstring = description.substring(startingIndex).replace(REMOVE_HTML, '').split(' ');
 
   return `${splitSubstring[1]} ${splitSubstring[2]}`;
 }
