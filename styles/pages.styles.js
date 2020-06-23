@@ -3,7 +3,7 @@ export const h3 = {
   fontSize: '1.5rem'
 };
 
-export const bottomSpacing = value => ({
+export const bottomSpacing = (value) => ({
   marginBottom: value
 });
 
@@ -112,4 +112,9 @@ export const sponsorBottomMargin = {
   '@media (max-width: 468px)': {
     paddingBottom: 96
   }
+};
+
+export const femLogo = {
+  width: '100%',
+  marginTop: -12
 };

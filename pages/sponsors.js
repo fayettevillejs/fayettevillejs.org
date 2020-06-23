@@ -60,6 +60,9 @@ const Sponsors = () => {
             </a>
             <SponsorLogo component={<FontAwesome />} url="https://fontawesome.com/" />
             <SponsorLogo component={<NwaTechFest />} url="https://nwatechfest.org/" />
+            <a href="https://frontendmasters.com/" css={{ cursor: 'pointer' }}>
+              <img src="/logos/fem-dark.png" css={[styles.logo, styles.femLogo]} />
+            </a>
           </div>
         </div>
       </Layout>
