@@ -34,7 +34,7 @@ const Event = ({ event }) => {
 function renderLightningTalks(description) {
   return description.map((block, idx, arr) => {
     const isLast = idx === arr.length - 1;
-    const speakerIndex = block.indexOf('by');
+    const speakerIndex = block.search(/ by /i) + 1;
 
     const speaker = removeHtml(block.slice(speakerIndex)).trim();
     const talkTitle = block.slice(0, speakerIndex).trim();
@@ -70,7 +70,7 @@ function renderDescriptionBlocks(isLighningTalks = false, description) {
   const isSpeakerLine = RegExp('(Presenter|Speaker)');
 
   return description
-    .filter(block => !isSpeakerLine.test(block) && block !== '')
+    .filter((block) => !isSpeakerLine.test(block) && block !== '')
     .map((block, idx, arr) => {
       const isFirst = idx === 0;
       const isLast = idx === arr.length - 1;
